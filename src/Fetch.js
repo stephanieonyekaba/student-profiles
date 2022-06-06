@@ -11,15 +11,25 @@ const getRequest = () => {
     .then(json => {
         // console.log(json)
         setData(json.students)
-    })
 
+        
+    })
+    
 }
+
 
 getRequest()
 
+
+
 let studentCard = data.map((item) => (
+
+
+
     <Card key={item.city} style={{ width: '85%' }} className="m-2">
                     
+
+
                     <Card.Body>
                         <Card.Text>
                             <div class="content"> 
@@ -32,7 +42,7 @@ let studentCard = data.map((item) => (
                                         <p>Email: {item.email}</p>
                                         <p>Company: {item.company}</p>
                                         <p>Skill: {item.skill}</p>
-                                        <p>Average: {item.grades}</p>
+                                        <p>Average: {item.grades.reduce((a, b) => a + b, 0) }</p>
                                         </b>
                                         </div>
                                         </div>
@@ -44,13 +54,16 @@ let studentCard = data.map((item) => (
                 </Card>
                 ))
 
+            
+
 
 	return (
 		<>
         <div>
-            <h3>STUDENT PROFILES</h3>
-     
-
+            <div class="input-feilds"> 
+            <input type="text" class="input" placeholder="Search by name"/>
+            <input type="text" class="input" placeholder="Search by tag"/>
+        </div>
                 {studentCard}
         </div>
       

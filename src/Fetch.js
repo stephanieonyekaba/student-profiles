@@ -18,10 +18,10 @@ getRequest()
 
 let studentCard = data.map((item) => (
     <Card key={item.city} style={{ width: '30%' }} className="m-2">
-                    <Card.Header>{item.firstName}</Card.Header>
+                    <Card.Header><h1> {item.firstName} {item.lastName}</h1> </Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <h3>hfjsdfjsdflk</h3>
+                            <p><img src={item.pic} height="100px"></img></p>
                         </Card.Text>
                     </Card.Body>
                 </Card>

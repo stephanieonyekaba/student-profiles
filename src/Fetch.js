@@ -18,20 +18,22 @@ const getRequest = () => {
 getRequest()
 
 let studentCard = data.map((item) => (
-    <Card key={item.city} style={{ width: '0%' }} className="m-2">
+    <Card key={item.city} style={{ width: '85%' }} className="m-2">
                     
                     <Card.Body>
                         <Card.Text>
                             <div class="content"> 
                                     <div class="content-text">    
-                                    <h1> {item.firstName} {item.lastName}</h1> 
+                                    <h1><b>{item.firstName} {item.lastName} </b> </h1> 
                             <div class="pic-text"> 
-                                        <div class="pic"> <img src={item.pic} width="100px" height="100px"></img></div>
+                                        <div class="pic"> <img src={item.pic} width="150px" height="150px"></img></div>
                                     <div class="text"> 
+                                    <b> 
                                         <p>Email: {item.email}</p>
                                         <p>Company: {item.company}</p>
                                         <p>Skill: {item.skill}</p>
                                         <p>Average: {item.grades}</p>
+                                        </b>
                                         </div>
                                         </div>
                                     </div>

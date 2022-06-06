@@ -1,5 +1,5 @@
-.Fetch {
-    text-align: center;
+body {
+    font-family: 'Raleway', Courier, monospace;
 }
 
 .content {
@@ -13,7 +13,7 @@
 
 .m-2 {
     border: 1px solid rgb(220, 213, 213);
-    height: 200px;
+    height: 300px;
     
 }
 
@@ -39,9 +39,10 @@ p {
 }
 
 h1 {
-    padding-left: 100px;
+    padding-left: 150px;
     font-size:40px;
     margin: 0;
+    font-weight: 700px;
 
 }
 
@@ -54,5 +55,13 @@ h1 {
     display: flex;
     flex-direction: column;
     padding-top:15px;
-    padding-left: 20px;
+    padding-left: 30px;
+    font-size: 20px;
+    color: rgb(200, 198, 198);
+  
+}
+
+.m-2 {
+    border: .5px solid rgb(220, 212, 212);
+    
 }

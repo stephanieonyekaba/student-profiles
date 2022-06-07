@@ -3,7 +3,11 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import './Fetch.css';
 
+
+
+
 const Fetch = () => {
+const [searchName, setSearchName] = useState('')
 const [data, setData] = useState([])
 const getRequest = () => {
     fetch('https://api.hatchways.io/assessment/students')
@@ -22,11 +26,18 @@ getRequest()
 
 
 
-let studentCard = data.map((item) => (
+    let studentCard = data.filter((item) => {
+            if (searchName == ""){
+                return item
+            }
+            else if (item.firstName.toLowerCase().includes(searchName.toLocaleLowerCase())){
+                return item
+            }
+        }).map((item) => (
 
 
 
-    <Card key={item.city} style={{ width: '85%' }} className="m-2">
+                    <Card key={item.city} style={{ width: '85%' }} className="m-2">
                     
 
 
@@ -34,7 +45,7 @@ let studentCard = data.map((item) => (
                         <Card.Text>
                             <div class="content"> 
                                     <div class="content-text">    
-                                    <h1><b>{item.firstName} {item.lastName} </b> </h1> 
+                                    <h1>  <b>{item.firstName} {item.lastName}</b>  </h1> 
                             <div class="pic-text"> 
                                         <div class="pic"> <img src={item.pic} width="150px" height="150px"></img></div>
                                     <div class="text"> 
@@ -61,10 +72,11 @@ let studentCard = data.map((item) => (
 		<>
         <div>
             <div class="input-feilds"> 
-            <input type="text" class="input" placeholder="Search by name"/>
+            <input type="text" class="input" placeholder="Search by name" onChange={event => {setSearchName(event.target.value)}}/>
             <input type="text" class="input" placeholder="Search by tag"/>
         </div>
-                {studentCard}
+                {studentCard} 
+
         </div>
       
 

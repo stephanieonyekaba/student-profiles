@@ -38,7 +38,7 @@ getRequest()
             if (searchName == ""){
                 return item
             }
-            else if (item.firstName.toLowerCase().includes(searchName.toLocaleLowerCase())){
+            else if (item.firstName.toLowerCase().includes(searchName.toLocaleLowerCase()) || item.lastName.toLowerCase().includes(searchName.toLocaleLowerCase())){
                 return item
             }
 

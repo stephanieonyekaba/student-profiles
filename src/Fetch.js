@@ -8,6 +8,7 @@ import './Fetch.css';
 
 const Fetch = () => {
 const [searchName, setSearchName] = useState('')
+const [gradeAverage, setGradeAverage] = useState([])
 const [data, setData] = useState([])
 const getRequest = () => {
     fetch('https://api.hatchways.io/assessment/students')
@@ -16,28 +17,53 @@ const getRequest = () => {
         // console.log(json)
         setData(json.students)
 
+
         
     })
+
+    
     
 }
+
 
 
 getRequest()
 
 
 
-    let studentCard = data.filter((item) => {
+
+
+
+    let studentCard = data.filter((item, grades) => {
             if (searchName == ""){
                 return item
             }
             else if (item.firstName.toLowerCase().includes(searchName.toLocaleLowerCase())){
                 return item
             }
-        }).map((item) => (
 
 
+            function findAverage(array) {
+                let sum = 0;
+                for (let i = 0; i < array.length; i++) {
+                  sum += parseInt(array[i]);
+                }
+                const average = sum / array.length;
+                return average;
+              }
+             findAverage({grades})
+           
+    
+            
+                
 
-                    <Card key={item.city} style={{ width: '85%' }} className="m-2">
+
+        }).map((item, findAverage) => (
+        
+
+    
+
+                    <Card key={item.grades} style={{ width: '85%' }} className="m-2">
                     
 
 
@@ -53,7 +79,15 @@ getRequest()
                                         <p>Email: {item.email}</p>
                                         <p>Company: {item.company}</p>
                                         <p>Skill: {item.skill}</p>
-                                        <p>Average: {item.grades.reduce((a, b) => a + b, 0) }</p>
+                                        <p>Average:  {item.grades.reduce((a,b) => a + parseInt(b), 0) / item.grades.length}%
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        </p>
                                         </b>
                                         </div>
                                         </div>
@@ -75,9 +109,20 @@ getRequest()
             <input type="text" class="input" placeholder="Search by name" onChange={event => {setSearchName(event.target.value)}}/>
             <input type="text" class="input" placeholder="Search by tag"/>
         </div>
+        
                 {studentCard} 
+   
+            
+            
+
+          
+
+
+
+            
 
         </div>
+       
       
 
 
@@ -87,6 +132,10 @@ getRequest()
 }
 
 export default Fetch
+
+
+
+
 
 
 

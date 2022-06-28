@@ -2,7 +2,7 @@ import { useState } from "react"
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import './Fetch.css';
-
+import ExpandGrades from './ExpandGrades';
 
 
 
@@ -31,6 +31,16 @@ getRequest()
 
 
 
+const [isOpen, setIsOpen] = useState(false)
+
+let expandGrades = <div className="collapse">
+    <button className ="buttonCollapse" onClick={() => setIsOpen(!isOpen)}>EXPAND</button>
+    {isOpen &&<div className="expandedGrades"> hello</div>}
+</div>
+
+
+
+
 
 
 
@@ -42,52 +52,38 @@ getRequest()
                 return item
             }
 
-
-            function findAverage(array) {
-                let sum = 0;
-                for (let i = 0; i < array.length; i++) {
-                  sum += parseInt(array[i]);
-                }
-                const average = sum / array.length;
-                return average;
-              }
-             findAverage({grades})
-           
-    
-            
-                
-
-
-        }).map((item, findAverage) => (
+        }).map((item) => (
         
-
-    
-
                     <Card key={item.grades} style={{ width: '85%' }} className="m-2">
                     
-
-
                     <Card.Body>
                         <Card.Text>
                             <div class="content"> 
                                     <div class="content-text">    
                                     <h1>  <b>{item.firstName} {item.lastName}</b>  </h1> 
-                            <div class="pic-text"> 
+                                    <div class="pic-text"> 
                                         <div class="pic"> <img src={item.pic} width="150px" height="150px"></img></div>
                                     <div class="text"> 
                                     <b> 
                                         <p>Email: {item.email}</p>
                                         <p>Company: {item.company}</p>
                                         <p>Skill: {item.skill}</p>
-                                        <p>Average:  {item.grades.reduce((a,b) => a + parseInt(b), 0) / item.grades.length}%
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        </p>
+                                        <p>Average:  {item.grades.reduce((a,b) => a + parseInt(b), 0) / item.grades.length}%</p>
+                                        <p>{expandGrades}</p>
+
+
+                                    
+                                        {/* <p className="Grade">Test 1:   {item.grades[0]}%</p>
+                                            <p className="Grade">Test 2:   {item.grades[1]}%</p>
+                                            <p className="Grade">Test 3:   {item.grades[2]}%</p>
+                                            <p className="Grade">Test 4:   {item.grades[3]}%</p>
+                                            <p className="Grade">Test 5:   {item.grades[4]}%</p>
+                                            <p className="Grade">Test 6:   {item.grades[5]}%</p>
+                                            <p className="Grade">Test 7:   {item.grades[6]}%</p>
+                                            <p className="Grade">Test 8:   {item.grades[7]}%</p> */}
+
+
+
                                         </b>
                                         </div>
                                         </div>
@@ -112,17 +108,15 @@ getRequest()
         
                 {studentCard} 
    
-            
-            
-
-          
-
-
-
-            
+                
+              
+              {/* <h1>hi</h1> */}
 
         </div>
+
        
+        
+          
       
 
 

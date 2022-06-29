@@ -58,11 +58,14 @@ h1 {
     padding-left: 30px;
     font-size: 20px;
     color: rgb(200, 198, 198);
+    max-width: 300px;
   
 }
 
 .m-2 {
     border: .5px solid rgb(220, 212, 212);
+    max-height: 300px;
+
     
 }
 
@@ -81,15 +84,30 @@ h1 {
 }
 
 
-.buttonCollapse {
+.button-sign {
+    
+    display: flex;
+    text-align: left;
     border: none;
-    background-color: white;
+    background-color: none;
     font-size: 50px;
     color: gray;
     
+
+    
 }
 
+.buttonCollapse {
+    border: none;
+    background-color: white;
+}
 
+.collapse {
+    max-width: 100px;
+}
 
-
+.test {
+    max-height: 100px;
+    font-size: 10px;
+}
 

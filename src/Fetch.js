@@ -33,10 +33,60 @@ getRequest()
 
 const [isOpen, setIsOpen] = useState(false)
 
+
+
 let expandGrades = <div className="collapse">
-    <button className ="buttonCollapse" onClick={() => setIsOpen(!isOpen)}>EXPAND</button>
+    <button className ="buttonCollapse" onClick={() => setIsOpen(!isOpen) }>
+
+    {
+    isOpen &&<span className="fa fa-minus" aria-hidden="true"> - </span>
+    }
+
+{!isOpen &&<span className="fa fa-plus" aria-hidden="true"> + </span>}
+
+
+
+    </button>
+
     {isOpen &&<div className="expandedGrades"> hello</div>}
+
 </div>
+
+
+
+
+
+
+// const [showGradesList, setShowGradesList] = useState(false);
+
+// const toggleGradeList = () => {
+//     setShowGradesList(!showGradesList);
+//   }
+
+
+//   let gradeList = null;
+
+//   let buttonSign = null;
+
+//   if(showGradesList){
+
+//     buttonSign = <span className="fa fa-minus" aria-hidden="true"></span>
+//   } else {
+//     gradeList = null;
+//     buttonSign = <span className="fa fa-plus" aria-hidden="true"></span>
+//   } 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

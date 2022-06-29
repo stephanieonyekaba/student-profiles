@@ -81,55 +81,15 @@ h1 {
 }
 
 
-
-
-
-
-
-.Expand-Button {
-    width: 12%;
-    margin-bottom: 2%;
-    margin-top: -3%;
-    margin-left: 27.7%;
-    border: 2px #C2C2C2 solid;
-    border-radius: 5px;
-    color: #4E6A67;
-    font-size: 17px;
+.buttonCollapse {
+    border: none;
+    background-color: white;
+    font-size: 50px;
+    color: gray;
+    
 }
 
-.Expand-Button:hover {
-    background-color: #3D3D3D;
-    color: white;
-}
 
-.Grades-Card {
-    margin-bottom: 2%;
-    margin-top: -1%;
-    display: flex;
-    flex-direction: column;
-}
 
-.Grade {
-    margin-left: 28%;
-    font-size: 14px;
-    font-weight: bold;
-    color: black;
-}
 
-/* Styles for SearchGradesExpandable.js */
 
-.Search-Expand-Button {
-    width: 12%;
-    margin-bottom: 2%;
-    margin-top: -5%;
-    margin-left: 27.7%;
-    border: 2px #C2C2C2 solid;
-    border-radius: 5px;
-    color: #4E6A67;
-    font-size: 17px;
-}
-
-.Search-Expand-Button:hover {
-    background-color: #3D3D3D;
-    color: white;
-}

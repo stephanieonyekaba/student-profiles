@@ -1,17 +1,14 @@
-
-import './App.css';
-import React from 'react';
-import Fetch from './Fetch';
+import "./App.css";
+import { useState, useEffect, useMemo, useCallback } from "react";
 
 
 
 function App() {
+  
   return (
-
-   <Fetch />
-
-
-
+    <>
+      <h1>STUDENT PROFILE</h1>
+    </>
   );
 }
 
